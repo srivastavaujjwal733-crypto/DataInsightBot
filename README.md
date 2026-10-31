@@ -98,7 +98,7 @@ The ML module works separately by using historical sales data with a Random Fore
 
 ### 1. Clone the Repository
 
-    git clone https://github.com/soumya-prasad-1/DataInsightBot.git
+    git clone https://github.com/srivastavaujjwal733-crypto/DataInsightBot.git
     cd DataInsightBot
 
 ### 2. Install the Required Packages
@@ -169,8 +169,5 @@ While building DataInsightBot, I worked with:
 
 ## 👩‍💻 Author
 
-**Soumya Prasad**
+**Ujjwal Srivastava**
 
-B.Tech CSE (Data Science)
-
-GitHub: https://github.com/soumya-prasad-1
