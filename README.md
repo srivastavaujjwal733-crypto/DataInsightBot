@@ -1,139 +1,155 @@
 # DataInsightBot 🤖📊
+### AI-Powered Business Intelligence & Natural Language Data Analytics
 
-DataInsightBot is an AI-powered business analytics project that helps users understand company data by simply asking questions in natural language.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Project-brightgreen?style=for-the-badge)](https://data-insight-bot-rif2.vercel.app/)
 
-Instead of manually writing SQL queries, users can ask questions like **"Which department has the highest average salary?"** and the application uses Gemini AI to generate the required SQL query, fetch the data from the database, and explain the result in simple terms.
+**DataInsightBot** is an AI-powered business analytics application that enables users to explore and understand business data through natural language questions — without manually writing SQL queries.
 
-The project also includes a Machine Learning module that uses Random Forest to predict future sales revenue.
+Powered by **Google Gemini AI**, the application converts user questions into SQL queries, validates and executes them against a SQLite database, and presents results with AI-generated explanations.
 
-## ✨ Features
+It also includes a Machine Learning module that uses **Random Forest Regression** to predict future sales revenue based on historical sales data.
 
-- Ask questions about company data using natural language
-- Automatically generate SQL queries using Gemini AI
-- Execute queries on a SQLite database
-- Get AI-generated explanations of query results
-- View query results in a clean table
-- Predict future sales revenue using Machine Learning
-- Modern web interface built with HTML, CSS and JavaScript
-- SQL validation for safer database queries
+🔗 **Live Application:** https://data-insight-bot-rif2.vercel.app/
 
-## 🛠️ Tech Stack
+---
 
-### Frontend
-- HTML
-- CSS
-- JavaScript
+## ✨ Key Features
 
-### Backend
-- Python
-- FastAPI
-- Uvicorn
+- **Natural Language Analytics:** Ask business questions in everyday language.
+- **AI-Powered SQL Generation:** Automatically generates SQL queries using Google Gemini.
+- **SQL Query Validation:** Validates generated queries before execution.
+- **Database Integration:** Retrieves business insights from a SQLite database.
+- **AI-Generated Explanations:** Explains query results in simple, understandable language.
+- **Interactive Results:** Displays query outputs in a structured table.
+- **Sales Prediction:** Uses a Random Forest Regression model to predict future revenue.
+- **Modern Web Interface:** Built with HTML, CSS, and JavaScript.
 
-### AI
-- Google Gemini API
-- google-genai
+## 🛠️ Technology Stack
 
-### Database
-- SQLite
+| Category | Technologies |
+|---|---|
+| Frontend | HTML5, CSS3, JavaScript |
+| Backend | Python, FastAPI, Uvicorn |
+| Generative AI | Google Gemini API, google-genai |
+| Database | SQLite |
+| Machine Learning | Scikit-learn, Random Forest Regression |
+| Data Processing | Pandas |
+| Environment Management | Python dotenv |
 
-### Machine Learning
-- Pandas
-- Scikit-learn
-- Random Forest Regression
+## 🏗️ Project Architecture
 
-## 📁 Project Structure
+DataInsightBot follows a workflow that connects natural language processing, SQL generation, database operations, and AI-powered explanations.
 
-    DataInsightBot/
-    │
-    ├── backend/
-    │   ├── database/
-    │   ├── chat_service.py
-    │   ├── database_query.py
-    │   ├── database_setup.py
-    │   ├── gemini_service.py
-    │   ├── insert_data.py
-    │   ├── main.py
-    │   ├── ml_prediction.py
-    │   ├── schema.py
-    │   ├── sql_validator.py
-    │   └── test_database.py
-    │
-    ├── frontend/
-    │   ├── index.html
-    │   ├── script.js
-    │   └── style.css
-    │
-    ├── .gitignore
-    └── README.md
+```text
+       User Question
+             |
+             v
+         Gemini AI
+             |
+             v
+     SQL Query Generation
+             |
+             v
+       SQL Validation
+             |
+             v
+       SQLite Database
+             |
+             v
+        Query Results
+             |
+             v
+       AI Explanation
+             |
+             v
+       Business Insights
+```
 
-## 🔄 How It Works
+The Machine Learning module operates separately, using historical sales data to generate revenue predictions through a Random Forest Regression model.
 
-The AI Analyst follows this simple flow:
+## 📂 Project Structure
 
-    User Question
-          ↓
-      Gemini AI
-          ↓
-    SQL Query Generation
-          ↓
-      SQL Validation
-          ↓
-    SQLite Database
-          ↓
-      Query Result
-          ↓
-     AI Explanation
-          ↓
-         User
+```text
+DataInsightBot/
+│
+├── backend/
+│   ├── database/
+│   ├── chat_service.py
+│   ├── database_query.py
+│   ├── database_setup.py
+│   ├── gemini_service.py
+│   ├── insert_data.py
+│   ├── main.py
+│   ├── ml_prediction.py
+│   ├── schema.py
+│   ├── sql_validator.py
+│   └── test_database.py
+│
+├── frontend/
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
+├── .gitignore
+└── README.md
+```
 
-For example, a user can ask:
+## ⚙️ Getting Started
 
-> Which department has the highest average salary?
-
-DataInsightBot converts the question into an SQL query, runs it on the database, and then explains the result in simple terms.
-
-The ML module works separately by using historical sales data with a Random Forest model to generate future revenue predictions.
-
-## 🚀 How to Run
+Follow these steps to run DataInsightBot locally.
 
 ### 1. Clone the Repository
 
-    git clone https://github.com/srivastavaujjwal733-crypto/DataInsightBot.git
-    cd DataInsightBot
+```bash
+git clone https://github.com/srivastavaujjwal733-crypto/DataInsightBot.git
+cd DataInsightBot
+```
 
-### 2. Install the Required Packages
+### 2. Install Dependencies
 
-    pip install fastapi uvicorn python-dotenv pandas scikit-learn google-genai
+```bash
+pip install fastapi uvicorn python-dotenv pandas scikit-learn google-genai
+```
 
-### 3. Add Your Gemini API Key
+### 3. Configure Gemini API Key
 
-Create a file named `.env` inside the `backend` folder.
+Create a `.env` file inside the `backend` directory.
 
-    backend/.env
+```text
+backend/.env
+```
 
-Add your API key:
+Add your Gemini API key:
 
-    GEMINI_API_KEY=your_api_key_here
+```env
+GEMINI_API_KEY=your_api_key_here
+```
 
-Keep this file private. Do not upload it to GitHub.
+**Important:** Keep your API key private. Never commit or upload your `.env` file to GitHub.
 
-### 4. Start the Backend
+### 4. Start the Backend Server
 
-Run this command from the project folder:
+Run the following command from the project root directory:
 
-    uvicorn backend.main:app --reload
+```bash
+uvicorn backend.main:app --reload
+```
 
-The backend will run at:
+The backend API will be available at:
 
-    http://127.0.0.1:8000
+```text
+http://127.0.0.1:8000
+```
 
-### 5. Open the Frontend
+### 5. Launch the Frontend
 
-Open `frontend/index.html` using VS Code Live Server.
+Open `frontend/index.html` using the VS Code Live Server extension.
 
-## 💬 Example Questions
+You can now interact with DataInsightBot through the web interface.
 
-You can ask questions such as:
+## 💡 Example Business Questions
+
+Users can ask questions such as:
 
 - Which department has the highest average salary?
 - Which department has the most employees?
@@ -141,33 +157,59 @@ You can ask questions such as:
 - Show me the sales data.
 - Which department has the lowest average salary?
 
-## 📈 Machine Learning
+DataInsightBot translates these questions into SQL queries, retrieves the relevant information, and explains the results in natural language.
 
-The project includes a Random Forest Regression model for sales prediction.
+## 📈 Machine Learning – Sales Prediction
 
-It uses historical sales data to learn patterns and predict future revenue. The predictions are displayed directly in the web interface.
+DataInsightBot includes a **Random Forest Regression** module for sales revenue prediction.
 
-## 🔐 Security
+The module:
+- Uses historical sales data.
+- Applies a Random Forest Regression algorithm.
+- Learns patterns from available data.
+- Generates future sales revenue predictions.
+- Displays predictions through the web interface.
 
-The project includes SQL validation before executing generated queries.
+## 🔐 Security & Validation
 
-The Gemini API key is stored in an environment file and is excluded from GitHub using `.gitignore`.
+- Generated SQL queries are validated before execution.
+- The Gemini API key is stored in an environment variable.
+- Sensitive environment files are excluded through `.gitignore`.
 
-## 🎯 What I Learned
+## 🎓 Key Learning Outcomes
 
-While building DataInsightBot, I worked with:
+Building DataInsightBot provided practical experience in:
 
-- Natural language to SQL generation
-- Gemini API integration
-- FastAPI backend development
-- SQLite database operations
-- SQL validation
-- Machine Learning with Random Forest
-- HTML, CSS and JavaScript
-- Connecting a frontend with a Python backend
-- Handling API responses and errors
+- Natural Language to SQL generation.
+- Generative AI and Gemini API integration.
+- REST API development using FastAPI.
+- SQLite database management and querying.
+- SQL query validation.
+- Machine Learning with Random Forest Regression.
+- Data processing using Pandas.
+- Frontend and backend integration.
+- API response handling and error management.
 
-## 👩‍💻 Author
+## 🚀 Future Improvements
+
+Potential enhancements include:
+
+- Interactive data visualizations and charts.
+- Support for additional database systems.
+- Advanced business analytics and reporting.
+- Improved prediction evaluation and model monitoring.
+- User authentication and personalized dashboards.
+
+## 👨‍💻 Author
 
 **Ujjwal Srivastava**
 
+B.Tech – Computer Science & Data Science
+
+[GitHub Profile](https://github.com/srivastavaujjwal733-crypto)
+
+---
+
+⭐ If you find this project interesting, feel free to explore the repository and try the live application.
+
+**Live Demo:** https://data-insight-bot-rif2.vercel.app/
